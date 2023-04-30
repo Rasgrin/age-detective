@@ -1,0 +1,35 @@
+@import "../../index.scss";
+
+.result {
+  max-width: inherit;
+  text-align: start;
+  margin-top: 50px;
+  font-size: 80px;
+
+  h1 {
+    font-size: 80px;
+
+    line-height: 80px;
+
+    @include mobile {
+      margin: 20px 40px;
+    }
+
+    @include tablet {
+      margin: 20px 0;
+    }
+
+    span {
+      font-size: 120px;
+
+      color: purple;
+    }
+  }
+
+  .empty {
+    max-width: inherit;
+    h1 {
+      margin-top: auto;
+    }
+  }
+}

@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  color: #171717;
+  background-color: #a0a0a0;
+}
+
+body {
+  margin: 0px;
+
+  a {
+    text-decoration: none;
+  }
+
+  button {
+    font-family: "Poppins", sans-serif;
+  }
+}
+
+// $themes: (
+//   light: (
+//     bg: #f6f6f6,
+//     textOne: black,
+//     textTwo: grey,
+//     textThree: #1e67b9,
+//     navbar: #002b5b,
+//     button: #002b5b,
+//     buttonHover: #003c80,
+//     buttonText: white,
+//     cards: white,
+//     search: white,
+//   ),
+//   dark: (
+//     bg: #222831,
+//     textOne: white,
+//     textTwo: #c5c5c5,
+//     textThree: #f45050,
+//     navbar: #282e38,
+//     button: #f45050,
+//     buttonHover: rgb(145, 57, 57),
+//     buttonText: #eeeeee,
+//     cards: #282e38,
+//     search: #282e38,
+//   ),
+// );
+
+// @mixin themify($themes) {
+//   @each $theme, $map in $themes {
+//     .theme-#{$theme} & {
+//       $theme-map: () !global;
+//       @each $key, $submap in $map {
+//         $value: map-get(map-get($themes, $theme), "#{$key}");
+//         $theme-map: map-merge(
+//           $theme-map,
+//           (
+//             $key: $value,
+//           )
+//         ) !global;
+//       }
+//       @content;
+//       $theme-map: null !global;
+//     }
+//   }
+// }
+
+// @function themed($key) {
+//   @return map-get($theme-map, $key);
+// }
+
+@mixin mobile {
+  @media (min-width: 250px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 760px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+// CUSTOM
+@mixin rwd($screen) {
+  @media (min-width: $screen) {
+    @content;
+  }
+}
