@@ -31,13 +31,13 @@ const Result = ({ data, errors }) => {
             </h1>
             {difference.months > 0 ? (
               <h1>
-                <span>{data.month ? difference.months : "--"}</span> months
+                <span>{data.month ? difference.months : "--"}</span> {difference.months === 1 ? "month" : "months"}
               </h1>
             ) : (
               ""
             )}
             <h1>
-              and <span>{data.day ? difference.days : "--"}</span> days old.
+              and <span>{data.day ? difference.days : "--"}</span> {difference.days === 1 ? "day" : "days"} old.
             </h1>
           </>
         ) : (
