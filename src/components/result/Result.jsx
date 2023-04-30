@@ -1,18 +1,24 @@
+import { useEffect } from "react";
 import "./result.scss";
 
 /* eslint-disable react/prop-types */
 const Result = ({ data, errors }) => {
   const today = new Date();
   const todayData = { day: today.getDate(), month: today.getMonth() + 1 + 12, year: today.getFullYear() - 1 };
-  const difference = { years: todayData.year - data.year, months: Math.abs(data.month - todayData.month), days: Math.abs(data.day - todayData.day) };
+
+  const differenceMonths = Math.abs(data.month - todayData.month);
+
+  const difference = { years: differenceMonths >= 12 ? todayData.year - data.year + 1 : todayData.year - data.year, months: differenceMonths >= 12 ? differenceMonths - 12 : differenceMonths, days: Math.abs(data.day - todayData.day) };
 
   const checkMonths = (months) => {
     if (months >= 12) {
       difference.years++;
+      difference.months = difference.months - 12;
       return months - 12;
     }
-    return months;
   };
+
+  useEffect(() => checkMonths());
 
   return (
     <div className="result">
@@ -23,10 +29,12 @@ const Result = ({ data, errors }) => {
             <h1>
               You are <span>{data.year && data.year.length > 3 ? difference.years : "--"}</span> years,
             </h1>
-            {difference.months > 0 && (
+            {difference.months > 0 ? (
               <h1>
-                <span>{data.month ? checkMonths(difference.months) : "--"}</span> months
+                <span>{data.month ? difference.months : "--"}</span> months
               </h1>
+            ) : (
+              ""
             )}
             <h1>
               and <span>{data.day ? difference.days : "--"}</span> days old.
