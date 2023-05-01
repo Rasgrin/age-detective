@@ -13,7 +13,7 @@ const Inputs = ({ data, onData, errors, onErrors }) => {
   // ? Temporary solution
   useEffect(() => {
     const interval = setInterval(() => {
-      setErrorsDay([]);
+      setTotalErrors([]);
       setTotalErrors([...errorsDay, ...errorsMonth, ...errorsYear]);
       totalErrors.length > 0 ? onErrors(true) : onErrors(false);
     }, 100);
@@ -41,6 +41,7 @@ const Inputs = ({ data, onData, errors, onErrors }) => {
 
   return (
     <>
+      {/* {JSON.stringify(totalErrors)} */}
       <div className="inputs">
         <div className="day">
           <h2>day</h2>
