@@ -7,27 +7,36 @@
   font-size: 80px;
 
   h1 {
-    font-size: 80px;
-
-    line-height: 80px;
-
     @include mobile {
+      font-size: 40px;
       margin: 20px 40px;
+      line-height: 40px;
     }
 
     @include tablet {
       margin: 20px 0;
+      font-size: 80px;
+      line-height: 80px;
     }
 
     span {
-      font-size: 120px;
-
       color: purple;
+
+      @include mobile {
+        font-size: 40px;
+        font-size: 50px;
+      }
+
+      @include tablet {
+        font-size: 120px;
+        font-size: 80px;
+      }
     }
   }
 
   .empty {
     max-width: inherit;
+
     h1 {
       margin-top: auto;
     }

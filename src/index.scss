@@ -23,6 +23,17 @@ body {
   }
 }
 
+// Hide arrows from input
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
 // $themes: (
 //   light: (
 //     bg: #f6f6f6,
