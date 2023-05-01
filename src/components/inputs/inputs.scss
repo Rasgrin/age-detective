@@ -33,7 +33,6 @@
     input {
       border-radius: 10px;
       border: none;
-      padding: 0 30px;
 
       font-weight: 600;
       background-color: #f6f6f6;
@@ -47,9 +46,18 @@
 
       @include tablet {
         text-align: start;
-        font-size: 50px;
+        font-size: 40px;
+        height: 80px;
+        width: 120px;
+        padding: 0 10px;
+      }
+
+      @include desktop {
         height: 100px;
         width: 160px;
+        font-size: 50px;
+        width: 120px;
+        padding: 0 30px;
       }
     }
   }

@@ -15,6 +15,11 @@
 
     @include tablet {
       margin: 20px 0;
+      font-size: 50px;
+      line-height: 50px;
+    }
+
+    @include desktop {
       font-size: 80px;
       line-height: 80px;
     }
@@ -28,8 +33,11 @@
       }
 
       @include tablet {
-        font-size: 120px;
         font-size: 80px;
+      }
+
+      @include desktop {
+        font-size: 120px;
       }
     }
   }
